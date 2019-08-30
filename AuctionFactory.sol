@@ -61,8 +61,10 @@ contract AuctionFactory is Ownable {
      */
     function createAuction(uint workId, uint minValue, uint startTime, uint endTime) public returns (address){
       // todo 
-      emit NewAuction()
-      emit AuctionCreated()
+      Auction newAuction = new Auction(msg.sender, workId, minValue, startTime, endTime);
+      
+      emit NewAuction(newAuction, msg.sender, auctions.length, allAuctions);
+      emit AuctionCreated(newAuction, msg.sender, workId, minValue, startTime, endTime);
       
     }
 
