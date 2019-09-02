@@ -77,7 +77,7 @@ contract AuctionFactory is Ownable {
 }
 
 /// @title Auction
-contract Auction {
+contract Auction is Ownable{
 
   // 생성자에 의해 정해지는 값
   address public owner;
